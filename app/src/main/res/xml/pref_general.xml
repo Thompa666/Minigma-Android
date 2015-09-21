@@ -1,0 +1,49 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="@string/security_title">
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:disableDependentsState="true"
+            android:key="instaclear_checkbox"
+            android:summary="@string/pref_summary_instaclear"
+            android:title="@string/pref_title_instaclear" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="clear_message_checkbox"
+            android:summary="@string/clear_message_summary"
+            android:title="@string/clear_message_title" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="passpeek_checkbox"
+            android:summary="@string/pref_summary_passpeek"
+            android:title="@string/pref_title_passpeek" />
+
+        <!--<CheckBoxPreference
+         android:key="hide_message"
+         android:title="@string/hide_message_prompt"
+         android:summary="@string/hide_message_description"
+         android:defaultValue="false" />-->
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/convenience_title">
+
+        <EditTextPreference
+            android:dependency="instaclear_checkbox"
+            android:enabled="true"
+            android:inputType="textPassword"
+            android:key="default_password"
+            android:positiveButtonText="Set"
+            android:summary="@string/default_password_description"
+            android:title="@string/default_password_prompt" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="share_uri"
+            android:summary="@string/uri_description"
+            android:title="@string/uri_title" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

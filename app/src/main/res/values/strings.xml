@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Minigma</string>
+    <string name="action_settings">Settings</string>
+    <string name="password_text">Password</string>
+    <string name="message_hint">Message</string>
+    <string name="encode_text">Encode</string>
+    <string name="decode_text">Decode</string>
+    <string name="action_about">About</string>
+    <string name="about_info">Made by Afnan Enayet</string>
+    <string name="help_button">Help</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="helpString1">Help</string>
+    <string name="helpString2">Minigma is an app that can encode or decode messages using a password.\nIn the password field, type in a password, and in the message field, type in a message.\nIf you want to decode a message, click the decode button.\nIf you want to encode a message, click the encode button.\nIf you want to copy the message or directly send it, click "Send Message"</string>
+    <string name="clear_text">Clear</string>
+    <string name="share_button">Send Message</string>
+    <string name="send_to">Send message via…</string>
+    <string name="settings_pane">Settings</string>
+    <string name="pref_title_instaclear">Clear Password</string>
+    <string name="pref_summary_instaclear">Clear the password when you click Encode or Decode</string>
+    <string name="pref_title_passpeek">Peek</string>
+    <string name="pref_summary_passpeek">Instead of leaving the decoded message when you click Decode, the message will only be seen while you hold the Decode button</string>
+    <string name="pref_header_sec">Security</string>
+    <string name="clear_message_title">Clear Message</string>
+    <string name="clear_message_summary">Clear your message (in the input box) when you click Encode or Decode</string>
+    <string name="title_activity_initscreen">initscreen</string>
+    <string name="hide_message_prompt">Hide Message</string>
+    <string name="hide_message_description">Make the message input box display circles instead of characters, like the password box</string>
+    <string name="decode_hint_prompt">Decoded message:</string>
+    <string name="encode_hint_prompt">Encoded message:</string>
+    <string name="about_popup_description">Minigma is a locally based encryption solution that uses a dynamic cipher based on user input.</string>
+    <string name="author_credit">Created by: Afnan Enayet, 2014R</string>
+    <string name="clear_pass_toast">Password cleared</string>
+    <string name="clear_mess_toast">Message cleared</string>
+    <string name="illegal_character_prompt">Illegal character used in message!</string>
+    <string name="ad_unit_id">ca-app-pub-2909306432460691/9081329568</string>
+    <string name="default_password_prompt">Default Password</string>
+    <string name="default_password_description">Set a password to always load in the password box</string>
+    <string name="convenience_title">Convenience</string>
+    <string name="security_title">Security</string>
+    <string name="uri_title">Send Message as Link</string>
+    <string name="uri_description">Sends messages as links that will automatically open Minigma</string>
+    <string name="title_activity_ad">AdActivity</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="clear_string"></string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="filter_title_multiscreen">Minigma</string>
+    <string name="sending_nothing">You can\'t send nothing!</string>
+    <string name="OK">OK</string>
+
+</resources>
