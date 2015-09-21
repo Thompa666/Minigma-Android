@@ -186,7 +186,6 @@ public class multiscreen extends AppCompatActivity {
 
     public void clearPassword(View view) { //clears password, shows toast
         EditText password_input = (EditText) findViewById(R.id.passEdit);
-        EditText message_input = (EditText) findViewById(R.id.messageEdit);
         password_input.setText(R.string.clear_string);
         Snackbar.make(snackbarParentLayout, R.string.clear_pass_toast, Snackbar.LENGTH_SHORT)
                 .show();
@@ -302,9 +301,8 @@ public class multiscreen extends AppCompatActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_multiscreen, container, false);
 
-            return rootView;
+            return inflater.inflate(R.layout.fragment_multiscreen, container, false);
         }
     }
 }
