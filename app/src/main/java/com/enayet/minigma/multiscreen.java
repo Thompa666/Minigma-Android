@@ -146,6 +146,10 @@ public class multiscreen extends AppCompatActivity {
 
     }
 
+    public void fabShare(View view) {
+        shareMessage();
+    }
+
     public void message_encode(View view) {
         InputMethodManager inputManager = (InputMethodManager) //hide the keyboard on button press
                 getSystemService(Context.INPUT_METHOD_SERVICE);
