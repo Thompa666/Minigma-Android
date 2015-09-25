@@ -132,9 +132,6 @@ public class multiscreen extends AppCompatActivity {
         } else if (id == R.id.help_screen) {
             infoDialog("Help", R.string.helpString2); //shows dialog with information
             return true;
-        } else if (id == R.id.share_message) { //function allows user to send the message via sharing int
-            shareMessage(); //shares message with text intent
-            return true;
         } else if (id == R.id.settings_screen) { //opens the settings activity via intent
             Intent openSettings = new Intent(this, SettingsActivity.class);
             startActivity(openSettings);
