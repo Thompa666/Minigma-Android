@@ -44,21 +44,12 @@ public class multiscreen extends AppCompatActivity {
 
         need_compat = Build.VERSION.SDK_INT <= 9;
         need_compat_dialog = Build.VERSION.SDK_INT < 11;
-
-       /* FloatingActionButton myFab = (FloatingActionButton) findViewById(R.id.myFAB); //TODO: delete comment tags
-        myFab.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                shareMessage();
-            }
-        });*/
     }
 
 
     protected void onResume() {
         super.onResume();
-        if (need_compat) {
-            setPassword(); //sets the default password jic user changed it in prefs
-        }
+        setPassword(); //sets the default password jic user changed it in prefs
     }
 
     @Override
