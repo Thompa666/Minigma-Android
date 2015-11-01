@@ -1,10 +1,10 @@
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/coordinator"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".multiscreen"
-    >
+    tools:context=".multiscreen">
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -17,23 +17,23 @@
 
 
 <android.support.design.widget.TextInputLayout
+    android:id="@+id/passEditWrap"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_toStartOf="@+id/clearPassword"
-    android:layout_toLeftOf="@+id/clearPassword"
     android:layout_alignParentLeft="true"
     android:layout_alignParentStart="true"
-    android:id="@+id/passEditWrap"
-    android:elevation="10dp"
-    android:layout_alignParentTop="true">
+    android:layout_alignParentTop="true"
+    android:layout_toLeftOf="@+id/clearPassword"
+    android:layout_toStartOf="@+id/clearPassword"
+    android:elevation="10dp">
         <EditText
             android:id="@+id/passEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:lines="1"
             android:ems="10"
             android:hint="@string/password_text"
             android:inputType="textPassword"
+            android:lines="1"
             android:maxLength="500"/>
 </android.support.design.widget.TextInputLayout>
 
@@ -41,12 +41,12 @@
             android:id="@+id/messageEditWrap"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:elevation="10dp"
-            android:layout_below="@+id/passEditWrap"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
+            android:layout_below="@+id/passEditWrap"
             android:layout_toLeftOf="@+id/clearMessage"
-            android:layout_toStartOf="@+id/clearMessage">
+            android:layout_toStartOf="@+id/clearMessage"
+            android:elevation="10dp">
             <EditText
                 android:id="@+id/messageEdit"
                 android:layout_width="match_parent"
@@ -65,6 +65,9 @@
             android:id="@+id/decodeButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/encodeButton"
             android:clickable="false"
             android:elevation="10dp"
             android:enabled="true"
@@ -72,53 +75,50 @@
             android:focusableInTouchMode="true"
             android:gravity="center"
             android:longClickable="true"
-            android:text="@string/decode_text"
-            android:layout_alignTop="@+id/encodeButton"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:text="@string/decode_text" />
 
         <TextView
             android:id="@+id/textHint"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textIsSelectable="false"
-            android:typeface="normal"
-            android:layout_below="@+id/decodeButton"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/decodeButton"
+            android:textIsSelectable="false"
+            android:typeface="normal" />
 
         <TextView
             android:id="@+id/messageOutput"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textHint"
             android:enabled="true"
             android:selectAllOnFocus="true"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textIsSelectable="true"
-            android:typeface="normal"
-            android:layout_below="@+id/textHint"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:typeface="normal" />
 
         <Button
             android:id="@+id/clearMessage"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/messageEditWrap"
+            android:layout_alignEnd="@+id/decodeButton"
+            android:layout_alignRight="@+id/decodeButton"
             android:layout_gravity="center"
             android:clickable="true"
             android:elevation="10dp"
             android:enabled="true"
             android:onClick="clearMessage"
             android:singleLine="true"
-            android:text="@string/clear_text"
-            android:layout_alignBottom="@+id/messageEditWrap"
-            android:layout_alignRight="@+id/decodeButton"
-            android:layout_alignEnd="@+id/decodeButton" />
+            android:text="@string/clear_text" />
 
 
         <Button
@@ -127,31 +127,46 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
+            android:layout_above="@+id/messageEditWrap"
             android:layout_gravity="center"
+            android:layout_toEndOf="@+id/messageEditWrap"
+            android:layout_toRightOf="@+id/messageEditWrap"
             android:clickable="true"
             android:elevation="10dp"
             android:enabled="true"
             android:onClick="clearPassword"
             android:singleLine="true"
-            android:text="@string/clear_text"
-            android:layout_above="@+id/messageEditWrap"
-            android:layout_toRightOf="@+id/messageEditWrap"
-            android:layout_toEndOf="@+id/messageEditWrap" />
+            android:text="@string/clear_text" />
 
 
         <Button
             android:id="@+id/encodeButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/messageEditWrap"
             android:clickable="true"
             android:elevation="10dp"
             android:enabled="true"
             android:onClick="message_encode"
-            android:text="@string/encode_text"
-            android:layout_below="@+id/messageEditWrap"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:text="@string/encode_text" />
 
+    </RelativeLayout>
 
-</RelativeLayout>
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="16dp"
+        android:onClick="fabShare"
+        android:src="@drawable/fab_icon"
+        app:elevation="6dp"
+        app:fabSize="normal"
+        app:pressedTranslationZ="12dp" />
+
 </android.support.design.widget.CoordinatorLayout>

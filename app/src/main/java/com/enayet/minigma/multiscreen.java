@@ -44,21 +44,12 @@ public class multiscreen extends AppCompatActivity {
 
         need_compat = Build.VERSION.SDK_INT <= 9;
         need_compat_dialog = Build.VERSION.SDK_INT < 11;
-
-       /* FloatingActionButton myFab = (FloatingActionButton) findViewById(R.id.myFAB); //TODO: delete comment tags
-        myFab.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                shareMessage();
-            }
-        });*/
     }
 
 
     protected void onResume() {
         super.onResume();
-        if (need_compat) {
-            setPassword(); //sets the default password jic user changed it in prefs
-        }
+        setPassword(); //sets the default password jic user changed it in prefs
     }
 
     @Override
@@ -132,9 +123,6 @@ public class multiscreen extends AppCompatActivity {
         } else if (id == R.id.help_screen) {
             infoDialog("Help", R.string.helpString2); //shows dialog with information
             return true;
-        } else if (id == R.id.share_message) { //function allows user to send the message via sharing int
-            shareMessage(); //shares message with text intent
-            return true;
         } else if (id == R.id.settings_screen) { //opens the settings activity via intent
             Intent openSettings = new Intent(this, SettingsActivity.class);
             startActivity(openSettings);
@@ -144,6 +132,10 @@ public class multiscreen extends AppCompatActivity {
 
         //methods corresponding to multiscreen fragment
 
+    }
+
+    public void fabShare(View view) {
+        shareMessage();
     }
 
     public void message_encode(View view) {
