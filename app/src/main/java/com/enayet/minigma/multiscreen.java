@@ -152,8 +152,8 @@ public class multiscreen extends AppCompatActivity {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this); //gets preferences
 
         TextView encode_hint = (TextView) findViewById(R.id.textHint); //gets texthint box
-        ran fuck = new ran(); //new instance of ran
-        boolean legal = fuck.verifyString(message_input); //makes variable to check if message contains any "illegal" characters
+        ran entropy = new ran(); //new instance of ran
+        boolean legal = entropy.verifyString(message_input); //makes variable to check if message contains any "illegal" characters
 
         s_output = encode.return_message(message_input, pass_input); //runs function to get the encoded string
 
@@ -171,7 +171,7 @@ public class multiscreen extends AppCompatActivity {
 
             text.setText(s_output); //displays the encoded string
         } else if (!legal) { //if message has unsupported characters, calls function to mitigate
-            illegalCharacter(fuck.illegal_character);
+            illegalCharacter(entropy.illegal_character);
 
         }
     }
