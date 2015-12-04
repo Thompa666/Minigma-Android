@@ -7,7 +7,12 @@ import java.util.Random;
 /**
  * Created by earmu_000 on 6/30/2014.
  */
-public class encoder {
+public class encoder /*implements Runnable*/{
+   /* @Override
+    public void run() {
+
+    }*/
+
     String return_message(EditText message, EditText password) {
         ran generator = new ran();
         Random salty = new Random();

@@ -2,6 +2,7 @@ package com.enayet.minigma;
 
 import android.annotation.TargetApi;
 import android.app.AlertDialog;
+import android.app.backup.BackupManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -36,20 +37,44 @@ public class multiscreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_multiscreen);
-        snackbarParentLayout = (CoordinatorLayout) findViewById(R.id.coordinator); //TODO: fix so FAB works
+        snackbarParentLayout = (CoordinatorLayout) findViewById(R.id.coordinator);
         Uri intent = getIntent().getData();
         if (intent != null) {
             parseDeepLink(intent);
         }
-
         need_compat = Build.VERSION.SDK_INT <= 9;
         need_compat_dialog = Build.VERSION.SDK_INT < 11;
     }
 
+    SharedPreferences.OnSharedPreferenceChangeListener spChanged = new
+            SharedPreferences.OnSharedPreferenceChangeListener() {
+                public void onSharedPreferenceChanged(SharedPreferences sharedPreferences,
+                                                      String key) {
+                    BackupManager mBackupManager = new BackupManager(getApplicationContext());
+                    mBackupManager.dataChanged();
+                }
+            };
 
+    @Override
     protected void onResume() {
         super.onResume();
         setPassword(); //sets the default password jic user changed it in prefs
+        SharedPreferences mPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+        mPrefs.registerOnSharedPreferenceChangeListener(spChanged);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        SharedPreferences mPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+        mPrefs.unregisterOnSharedPreferenceChangeListener(spChanged);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        SharedPreferences mPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+        mPrefs.unregisterOnSharedPreferenceChangeListener(spChanged);
     }
 
     @Override
@@ -259,7 +284,6 @@ public class multiscreen extends AppCompatActivity {
                     .setNegativeButton("OK", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
-
                         }
                     })
                     .show();
@@ -272,14 +296,11 @@ public class multiscreen extends AppCompatActivity {
                     .setNegativeButton("OK", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
-
                         }
                     })
                     .show();
         }
     }
-
-
 
     /**
      * A placeholder fragment containing a simple view.
