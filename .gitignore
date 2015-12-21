@@ -29,3 +29,5 @@ proguard/
 /build
 /captures
 
+
+app/src/main/java/com/enayet/minigma/mBackupAgent.java
