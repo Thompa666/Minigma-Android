@@ -31,3 +31,5 @@ proguard/
 
 
 app/src/main/java/com/enayet/minigma/mBackupAgent.java
+
+app/src/main/AndroidManifest.xml
